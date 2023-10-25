@@ -1,0 +1,2 @@
+* @mapbox/maps-android
+*.api @mapbox/maps-android @mapbox/maps-ios

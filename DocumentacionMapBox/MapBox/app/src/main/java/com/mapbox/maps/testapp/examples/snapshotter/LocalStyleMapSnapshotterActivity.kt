@@ -1,0 +1,69 @@
+package com.mapbox.maps.testapp.examples.snapshotter
+
+import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import com.mapbox.geojson.Point
+import com.mapbox.maps.*
+
+/**
+ * Activity to validate creating a snapshot from a configuration not using style URI or JSON
+ */
+class LocalStyleMapSnapshotterActivity : AppCompatActivity() {
+  private lateinit var mapSnapshotter: Snapshotter
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    val snapshotterOptions = MapSnapshotOptions.Builder()
+      .size(Size(512.0f, 512.0f))
+      .pixelRatio(1.0f)
+      .build()
+
+    mapSnapshotter = Snapshotter(this, snapshotterOptions)
+    mapSnapshotter.setCamera(
+      CameraOptions.Builder().zoom(14.0).center(
+        Point.fromLngLat(
+          4.895033, 52.374724
+        )
+      ).build()
+    )
+    mapSnapshotter.setStyleJson(
+      """
+        {
+          "version": 8,
+          "metadata": {
+            "test": {
+              "width": 64,
+              "height": 64
+            }
+          },
+          "sources": {},
+          "layers": [
+            {
+              "id": "background",
+              "type": "background",
+              "paint": {
+                "background-color": "red"
+              }
+            }
+          ]
+        }
+      """.trimIndent()
+    )
+    // ignore error in this example
+    mapSnapshotter.start { bitmap, _ ->
+      val imageView = ImageView(this)
+      imageView.setImageBitmap(bitmap)
+      setContentView(imageView)
+    }
+  }
+
+  override fun onDestroy() {
+    super.onDestroy()
+    mapSnapshotter.destroy()
+  }
+
+  companion object {
+    const val TAG: String = "LocalStyleMapSnapshotterActivity"
+  }
+}

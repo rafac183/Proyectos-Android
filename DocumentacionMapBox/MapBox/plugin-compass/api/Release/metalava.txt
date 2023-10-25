@@ -1,0 +1,32 @@
+// Signature format: 3.0
+package com.mapbox.maps.plugin.compass {
+
+  public final class CompassUtils {
+    method public static com.mapbox.maps.plugin.compass.CompassPlugin getCompass(com.mapbox.maps.plugin.delegates.MapPluginProviderDelegate);
+  }
+
+  public class CompassViewImpl extends androidx.appcompat.widget.AppCompatImageView implements com.mapbox.maps.plugin.compass.CompassView {
+    ctor public CompassViewImpl(android.content.Context context, android.util.AttributeSet? attrs = null, int defStyleAttr = 0);
+    ctor public CompassViewImpl(android.content.Context context, android.util.AttributeSet? attrs = null);
+    ctor public CompassViewImpl(android.content.Context context);
+    method public int getCompassGravity();
+    method public android.graphics.drawable.Drawable getCompassImage();
+    method public float getCompassRotation();
+    method public boolean isCompassEnabled();
+    method public boolean isCompassVisible();
+    method public void setCompassAlpha(float float);
+    method public void setCompassEnabled(boolean);
+    method public void setCompassGravity(int);
+    method public void setCompassImage(android.graphics.drawable.Drawable);
+    method public void setCompassMargins(int left, int top, int right, int bottom);
+    method public void setCompassRotation(float);
+    method public void setCompassVisible(boolean);
+    property public int compassGravity;
+    property public android.graphics.drawable.Drawable compassImage;
+    property public float compassRotation;
+    property public boolean isCompassEnabled;
+    property public boolean isCompassVisible;
+  }
+
+}
+

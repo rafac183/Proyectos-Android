@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">EjemploNotificacion</string>
+    <string name="lblNombre">Nombre</string>
+    <string name="lblEdad">Edad</string>
+    <string name="btnAceptar">Aceptar y Notificar</string>
+</resources>

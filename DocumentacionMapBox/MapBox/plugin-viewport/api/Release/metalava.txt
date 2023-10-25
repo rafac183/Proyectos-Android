@@ -1,0 +1,16 @@
+// Signature format: 3.0
+package com.mapbox.maps.plugin.viewport {
+
+  public final class ViewportUtils {
+    method public static com.mapbox.maps.plugin.viewport.ViewportPlugin getViewport(com.mapbox.maps.plugin.delegates.MapPluginProviderDelegate);
+  }
+
+}
+
+package com.mapbox.maps.plugin.viewport.transition {
+
+  public final class TransitionUtilsKt {
+  }
+
+}
+

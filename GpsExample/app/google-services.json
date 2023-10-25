@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "56323125050",
+    "firebase_url": "https://gps2-f3325-default-rtdb.firebaseio.com",
+    "project_id": "gps2-f3325",
+    "storage_bucket": "gps2-f3325.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56323125050:android:ab615d07fcbd4ac606aa03",
+        "android_client_info": {
+          "package_name": "com.rafac183.gps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD86_z0OsKtO0DjeFxntJ8cSGK-eSuoGmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

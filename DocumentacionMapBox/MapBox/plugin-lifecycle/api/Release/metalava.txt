@@ -1,0 +1,9 @@
+// Signature format: 3.0
+package com.mapbox.maps.plugin.lifecycle {
+
+  public final class LifecycleUtils {
+    method public static com.mapbox.maps.plugin.lifecycle.MapboxLifecyclePlugin getLifecycle(com.mapbox.maps.plugin.delegates.MapPluginProviderDelegate);
+  }
+
+}
+

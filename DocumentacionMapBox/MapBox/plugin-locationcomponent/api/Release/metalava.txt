@@ -1,0 +1,48 @@
+// Signature format: 3.0
+package com.mapbox.maps.plugin.locationcomponent {
+
+  public final class DefaultLocationProvider implements com.mapbox.maps.plugin.locationcomponent.LocationProvider {
+    ctor public DefaultLocationProvider(android.content.Context context);
+    method public void addOnCompassCalibrationListener(com.mapbox.maps.plugin.locationcomponent.LocationCompassCalibrationListener listener);
+    method public void registerLocationConsumer(com.mapbox.maps.plugin.locationcomponent.LocationConsumer locationConsumer);
+    method public void removeCompassCalibrationListener(com.mapbox.maps.plugin.locationcomponent.LocationCompassCalibrationListener listener);
+    method public void unRegisterLocationConsumer(com.mapbox.maps.plugin.locationcomponent.LocationConsumer locationConsumer);
+    method public void updatePuckBearing(com.mapbox.maps.plugin.PuckBearing source);
+  }
+
+  public fun interface LocationCompassCalibrationListener {
+    method public void onCompassCalibrationNeeded();
+  }
+
+  public final class LocationComponentConstants {
+    field public static final long ACCURACY_RADIUS_ANIMATION_DURATION = 250L; // 0xfaL
+    field public static final String BEARING_ICON = "mapbox-location-bearing-icon";
+    field public static final long COMPASS_UPDATE_RATE_MS = 500L; // 0x1f4L
+    field public static final long DEFAULT_FASTEST_INTERVAL_MILLIS = 1000L; // 0x3e8L
+    field public static final long DEFAULT_INTERVAL_MILLIS = 1000L; // 0x3e8L
+    field public static final long DEFAULT_TRACKING_PADDING_ANIM_DURATION = 750L; // 0x2eeL
+    field public static final long DEFAULT_TRACKING_TILT_ANIM_DURATION = 1250L; // 0x4e2L
+    field public static final long DEFAULT_TRACKING_ZOOM_ANIM_DURATION = 750L; // 0x2eeL
+    field public static final com.mapbox.maps.plugin.locationcomponent.LocationComponentConstants INSTANCE;
+    field public static final double INSTANT_LOCATION_TRANSITION_THRESHOLD = 50000.0;
+    field public static final String LOCATION_INDICATOR_LAYER = "mapbox-location-indicator-layer";
+    field public static final long MAX_ANIMATION_DURATION_MS = 2000L; // 0x7d0L
+    field public static final String MODEL_LAYER = "mapbox-location-model-layer";
+    field public static final String MODEL_SOURCE = "mapbox-location-model-source";
+    field public static final float PULSING_MAX_RADIUS_FOLLOW_ACCURACY = -1.0f;
+    field public static final String SHADOW_ICON = "mapbox-location-shadow-icon";
+    field public static final String TOP_ICON = "mapbox-location-top-icon";
+    field public static final long TRANSITION_ANIMATION_DURATION_MS = 750L; // 0x2eeL
+  }
+
+  public final class LocationComponentUtils {
+    method public static com.mapbox.maps.plugin.LocationPuck2D createDefault2DPuck(com.mapbox.maps.plugin.locationcomponent.LocationComponentPlugin, android.content.Context context, boolean withBearing = false);
+    method public static com.mapbox.maps.plugin.LocationPuck2D createDefault2DPuck(com.mapbox.maps.plugin.locationcomponent.LocationComponentPlugin, android.content.Context context);
+    method public static com.mapbox.maps.plugin.locationcomponent.LocationComponentPlugin getLocationComponent(com.mapbox.maps.plugin.delegates.MapPluginProviderDelegate);
+  }
+
+  public final class LocationPuckManagerKt {
+  }
+
+}
+

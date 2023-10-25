@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mapbox_scaleBarBorderWidth="1dp"
+        app:mapbox_scaleBarHeight="3dp"
+        app:mapbox_scaleBarMarginLeft="5dp"
+        app:mapbox_scaleBarMarginTop="5dp"
+        app:mapbox_scaleBarPrimaryColor="@color/white"
+        app:mapbox_scaleBarSecondaryColor="@color/design_default_color_on_secondary"
+        app:mapbox_scaleBarTextBarMargin="5dp"
+        app:mapbox_scaleBarTextBorderWidth="1dp"
+        app:mapbox_scaleBarTextColor="@color/accent"
+        app:mapbox_scaleBarTextSize="10dp"
+        tools:context=".examples.SimpleMapActivity" />
+
+    <TextView
+        android:id="@+id/fpsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="30 FPS" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

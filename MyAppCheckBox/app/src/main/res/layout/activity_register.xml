@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#CB9E5AAE">
+
+    <EditText
+        android:id="@+id/edName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        />
+    <EditText
+        android:id="@+id/edLastName"
+        android:layout_below="@id/edName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LastName"
+        />
+    <EditText
+        android:id="@+id/edPhone"
+        android:layout_below="@id/edLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone"
+        />
+    <EditText
+        android:id="@+id/edAddress"
+        android:layout_below="@id/edPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        />
+
+    <CheckBox
+        android:id="@+id/chkMas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masculino"
+        android:textSize="20dp"
+        android:layout_marginStart="50dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@id/edAddress"
+        android:textColor="@color/black"
+        android:background="@android:color/holo_green_light"/>
+
+    <CheckBox
+        android:id="@+id/chkFem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Femenino"
+        android:textSize="20dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@id/edAddress"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/black"
+        android:background="@android:color/holo_green_light"
+        />
+    <!--android:layout_toRightOf="@id/chkMas"-->
+    <Button
+        android:id="@+id/btnPresionar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar Datos"
+        android:layout_marginHorizontal="100dp"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_alignParentBottom="true"
+        android:onClick="btnChek"/>
+
+</RelativeLayout>

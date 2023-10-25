@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Mapbox with Firebase</string>
+    <string name="mapbox_access_token">PASTE_YOUR_PUBLIC_TOKEN_HERE</string>
+</resources>

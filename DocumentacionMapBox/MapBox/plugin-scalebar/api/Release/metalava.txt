@@ -1,0 +1,46 @@
+// Signature format: 3.0
+package com.mapbox.maps.plugin.scalebar {
+
+  public final class LocaleUnitResolver {
+    method public boolean isMetricSystem();
+    property public final boolean isMetricSystem;
+    field public static final com.mapbox.maps.plugin.scalebar.LocaleUnitResolver INSTANCE;
+  }
+
+  public final class ScaleBarConstantKt {
+  }
+
+  public final class ScaleBarImpl extends android.view.View implements com.mapbox.maps.plugin.scalebar.ScaleBar {
+    ctor public ScaleBarImpl(android.content.Context context);
+    ctor public ScaleBarImpl(android.content.Context context, android.util.AttributeSet attrs);
+    ctor public ScaleBarImpl(android.content.Context context, android.util.AttributeSet attrs, int defStyleAttr);
+    method public float getDistancePerPixel();
+    method public boolean getEnable();
+    method public float getMapViewWidth();
+    method public float getPixelRatio();
+    method public com.mapbox.maps.plugin.scalebar.generated.ScaleBarSettings getSettings();
+    method public boolean getUseContinuousRendering();
+    method public void setDistancePerPixel(float);
+    method public void setEnable(boolean);
+    method public void setMapViewWidth(float);
+    method public void setPixelRatio(float);
+    method public void setSettings(com.mapbox.maps.plugin.scalebar.generated.ScaleBarSettings);
+    method public void setUseContinuousRendering(boolean);
+    property public float distancePerPixel;
+    property public boolean enable;
+    property public float mapViewWidth;
+    property public float pixelRatio;
+    property public com.mapbox.maps.plugin.scalebar.generated.ScaleBarSettings settings;
+    property public boolean useContinuousRendering;
+    field public static final com.mapbox.maps.plugin.scalebar.ScaleBarImpl.Companion Companion;
+  }
+
+  public static final class ScaleBarImpl.Companion {
+  }
+
+  public final class ScaleBarUtils {
+    method public static com.mapbox.maps.plugin.scalebar.ScaleBarPlugin getScaleBar(com.mapbox.maps.plugin.delegates.MapPluginProviderDelegate);
+  }
+
+}
+

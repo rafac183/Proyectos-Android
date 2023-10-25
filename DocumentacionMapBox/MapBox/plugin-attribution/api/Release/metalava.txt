@@ -1,0 +1,31 @@
+// Signature format: 3.0
+package com.mapbox.maps.plugin.attribution {
+
+  public final class AttributionDialogManagerImpl implements com.mapbox.maps.plugin.attribution.AttributionDialogManager android.content.DialogInterface.OnClickListener {
+    ctor public AttributionDialogManagerImpl(android.content.Context context);
+    method public void onClick(android.content.DialogInterface dialog, int which);
+    method public void onStop();
+    method public void showAttribution(com.mapbox.maps.plugin.delegates.MapAttributionDelegate mapAttributionDelegate);
+    field public static final com.mapbox.maps.plugin.attribution.AttributionDialogManagerImpl.Companion Companion;
+  }
+
+  public static final class AttributionDialogManagerImpl.Companion {
+  }
+
+  public final class AttributionUtils {
+    method public static com.mapbox.maps.plugin.attribution.AttributionPlugin getAttribution(com.mapbox.maps.plugin.delegates.MapPluginProviderDelegate);
+  }
+
+  public final class AttributionViewImpl extends androidx.appcompat.widget.AppCompatImageView implements com.mapbox.maps.plugin.attribution.AttributionView {
+    ctor public AttributionViewImpl(android.content.Context context, android.util.AttributeSet? attrs = null, int defStyleAttr = 0);
+    ctor public AttributionViewImpl(android.content.Context context, android.util.AttributeSet? attrs = null);
+    ctor public AttributionViewImpl(android.content.Context context);
+    method public void setAttributionMargins(int left, int top, int right, int bottom);
+    method public void setEnable(boolean enabled);
+    method public void setGravity(int gravity);
+    method public void setIconColor(int color);
+    method public void setViewOnClickListener(android.view.View.OnClickListener listener);
+  }
+
+}
+

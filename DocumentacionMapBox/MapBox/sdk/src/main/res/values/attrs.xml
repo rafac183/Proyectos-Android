@@ -1,0 +1,82 @@
+<resources>
+    <declare-styleable name="mapbox_MapView">
+        <!-- The map context mode. This can be used to optimizations if we know that the drawing context is not shared with other code. -->
+        <attr name="mapbox_mapContextMode" format="enum">
+            <!-- Unique context mode: in OpenGL, the GL context is not shared, thus we can retain knowledge about the GL state from a previous render pass. It also enables clearing the screen using glClear for the bottommost background layer when no pattern is applied to that layer. -->
+            <enum name="unique" value="0" />
+            <!-- Shared context mode: in OpenGL, the GL context is shared with other renderers, thus we cannot rely on the GL state set from a previous render pass. -->
+            <enum name="shared" value="1" />
+            <!-- A once-off still image of a single tile. -->
+            <enum name="tile" value="2" />
+        </attr>
+        <!-- The map constrain mode. This can be used to limit the map to wrap around the globe horizontally. By default, it is set to HeightOnly. -->
+        <attr name="mapbox_mapConstrainMode" format="enum">
+            <!-- No constraints. -->
+            <enum name="none" value="0" />
+            <!-- Constrain to height only. -->
+            <enum name="height_only" value="1" />
+            <!-- Constrain both width and height axes. -->
+            <enum name="width_and_height" value="2" />
+        </attr>
+        <!-- The viewport mode. This can be used to flip the vertical orientation of the map as some devices may use inverted orientation. -->
+        <attr name="mapbox_mapViewportMode" format="enum">
+            <!-- Default viewport. -->
+            <enum name="default_viewport" value="0" />
+            <!-- Viewport flipped on the y-axis. -->
+            <enum name="flipped_y" value="1" />
+        </attr>
+        <!-- The orientation of the Map. By default, it is set to upwards. -->
+        <attr name="mapbox_mapOrientation" format="enum">
+            <!-- Default, map oriented upwards. -->
+            <enum name="upwards" value="0" />
+            <!-- Map oriented rightwards. -->
+            <enum name="rightwards" value="1" />
+            <!-- Map oriented downwards. -->
+            <enum name="downwards" value="2" />
+            <!-- Map oriented lefttwards. -->
+            <enum name="lefttwards" value="3" />
+        </attr>
+        <!-- To enable cross-source symbol collision detection or not. By default, it is set to true. -->
+        <attr name="mapbox_mapCrossSourceCollisionsEnabled" format="boolean" />
+        <!-- The custom pixel ratio. By default, it is set to 1. -->
+        <attr name="mapbox_mapPixelRatio" format="float" />
+        <!-- The view type used to render. -->
+        <attr name="mapbox_mapSurface" format="enum">
+            <!-- Default, map rendering on a SurfaceView with no alpha channel in EGL config. -->
+            <enum name="surface_view" value="0" />
+            <!-- Map rendering on a TextureView with 8-byte alpha channel in EGL config. -->
+            <enum name="texture_view" value="1" />
+        </attr>
+        <!-- MSAA sample count. Defaults to 1 meaning MSAA is disabled. Most common values are 4, 8 etc (stand for MSAA x4, x8 etc). Higher values result in better quality, but may reduce overall performance. -->
+        <attr name="mapbox_mapAntialiasingSampleCount" format="integer"/>
+
+        <!-- Font family to use as font fallback for client-side text renderings. -->
+        <attr name="mapbox_mapFontFamily" format="string" />
+        <!-- Describes glyphs rasterization modes. -->
+        <attr name="mapbox_mapGlyphRasterizationMode" format="enum">
+            <!-- No glyphs are rasterized locally. All glyphs are loaded from the server. -->
+            <enum name="no_glyphs_rasterized_locally" value="0" />
+            <!-- Ideographs are rasterized locally, and they are not loaded from the server. -->
+            <enum name="ideographs_rasterized_locally" value="1" />
+            <!-- All glyphs are rasterized locally. No glyphs are loaded from the server. -->
+            <enum name="all_glyphs_rasterized_locally" value="2" />
+        </attr>
+
+        <!-- OLD MANUAL WRITTEN configuration-->
+        <!--Camera-->
+        <attr name="mapbox_cameraTargetLat" format="float" />
+        <attr name="mapbox_cameraTargetLng" format="float" />
+        <attr name="mapbox_cameraZoom" format="float" />
+        <attr name="mapbox_cameraBearing" format="float" />
+        <attr name="mapbox_cameraPitch" format="float" />
+        <attr name="mapbox_cameraAnchorX" format="float" />
+        <attr name="mapbox_cameraAnchorY" format="float" />
+        <attr name="mapbox_cameraPaddingTop" format="float" />
+        <attr name="mapbox_cameraPaddingLeft" format="float" />
+        <attr name="mapbox_cameraPaddingBottom" format="float" />
+        <attr name="mapbox_cameraPaddingRight" format="float" />
+
+        <!-- The default style uri to load when no style is set. -->
+        <attr name="mapbox_styleUri" format="string" />
+    </declare-styleable>
+</resources>

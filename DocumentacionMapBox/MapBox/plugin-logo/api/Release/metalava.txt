@@ -1,0 +1,22 @@
+// Signature format: 3.0
+package com.mapbox.maps.plugin.logo {
+
+  public final class LogoUtils {
+    method public static com.mapbox.maps.plugin.logo.LogoPlugin getLogo(com.mapbox.maps.plugin.delegates.MapPluginProviderDelegate);
+  }
+
+  public final class LogoViewImpl extends androidx.appcompat.widget.AppCompatImageView implements com.mapbox.maps.plugin.logo.LogoView {
+    ctor public LogoViewImpl(android.content.Context context);
+    ctor public LogoViewImpl(android.content.Context context, android.util.AttributeSet attrs);
+    ctor public LogoViewImpl(android.content.Context context, android.util.AttributeSet attrs, int defStyleAttr);
+    method public boolean getLogoEnabled();
+    method public int getLogoGravity();
+    method public void setLogoEnabled(boolean);
+    method public void setLogoGravity(int);
+    method public void setLogoMargins(int left, int top, int right, int bottom);
+    property public boolean logoEnabled;
+    property public int logoGravity;
+  }
+
+}
+
