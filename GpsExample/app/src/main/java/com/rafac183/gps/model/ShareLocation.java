@@ -1,4 +1,4 @@
-package com.rafac183.gps;
+package com.rafac183.gps.model;
 
 public class ShareLocation {
     String id, name;

@@ -1,4 +1,4 @@
-package com.rafac183.gps;
+package com.rafac183.gps.activities;
 
 import static com.mapbox.maps.plugin.gestures.GesturesUtils.getGestures;
 import static com.mapbox.maps.plugin.locationcomponent.LocationComponentUtils.getLocationComponent;
@@ -7,6 +7,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.ActivityCompat;
@@ -15,9 +16,13 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
@@ -43,6 +48,8 @@ import com.mapbox.maps.plugin.gestures.OnMoveListener;
 import com.mapbox.maps.plugin.locationcomponent.LocationComponentPlugin;
 import com.mapbox.maps.plugin.locationcomponent.OnIndicatorBearingChangedListener;
 import com.mapbox.maps.plugin.locationcomponent.OnIndicatorPositionChangedListener;
+import com.rafac183.gps.R;
+import com.rafac183.gps.model.ShareLocation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private final OnIndicatorPositionChangedListener onIndicatorPositionChangedListener = new OnIndicatorPositionChangedListener() {
         @Override
         public void onIndicatorPositionChanged(@NonNull Point point) {
-            mapView.getMapboxMap().setCamera(new CameraOptions.Builder().center(point).zoom(17.0).build());
+            mapView.getMapboxMap().setCamera(new CameraOptions.Builder().center(point).zoom(2.0).build());
             getGestures(mapView).setFocalPoint(mapView.getMapboxMap().pixelForCoordinate(point));
             MainActivity.this.point = point;
         }
@@ -108,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
         floatingActionButton.hide();
         mapView.getMapboxMap().loadStyleUri(Style.SATELLITE_STREETS, style -> {
-            mapView.getMapboxMap().setCamera(new CameraOptions.Builder().zoom(17.0).build());
+            mapView.getMapboxMap().setCamera(new CameraOptions.Builder().zoom(2.0).build());
             LocationComponentPlugin locationComponentPlugin = getLocationComponent(mapView);
             locationComponentPlugin.setEnabled(true);
             LocationPuck2D locationPuck2D = new LocationPuck2D();
@@ -118,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             locationComponentPlugin.addOnIndicatorBearingChangedListener(onIndicatorBearingChangedListener);
             getGestures(mapView).addOnMoveListener(onMoveListener);
 
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.location);
+
             AnnotationPlugin annotationPlugin = AnnotationPluginImplKt.getAnnotations(mapView);
             PointAnnotationManager pointAnnotationManager = PointAnnotationManagerKt.createPointAnnotationManager(annotationPlugin, new AnnotationConfig());
 
@@ -136,18 +143,28 @@ public class MainActivity extends AppCompatActivity {
                     snapshot.getChildren().forEach(dataSnapshot -> {
                         ShareLocation location1 = dataSnapshot.getValue(ShareLocation.class);
                         if (location1 != null && !location1.getId().equals(MainActivity.this.location.getId())){
-                            PointAnnotationOptions pointAnnotationOptions = new PointAnnotationOptions()
-                                    .withTextAnchor(TextAnchor.CENTER)
-                                    .withIconImage(bitmap)
-                                    .withPoint(Point.fromLngLat(location1.getLongitude(), location1.getLatitude()));
-                            pointAnnotationManager.create(pointAnnotationOptions);
+                            Glide.with(MainActivity.this).asBitmap().load("https://i.ibb.co/F4B4GZQ/location.png")
+                                    .into(new SimpleTarget<Bitmap>() {
+                                        @Override
+                                        public void onResourceReady(@NonNull Bitmap oldResource, @Nullable Transition<? super Bitmap> transition) {
+                                            int newWidth = 100;
+                                            int newHeight = 100;
+                                            Bitmap scaledResource = Bitmap.createScaledBitmap(oldResource, newWidth, newHeight, false);
+                                            PointAnnotationOptions pointAnnotationOptions = new PointAnnotationOptions()
+                                                    .withTextAnchor(TextAnchor.CENTER)
+                                                    .withIconImage(BitmapUtils.getBitmapFromDrawable(getResources(), new BitmapDrawable(getResources(), scaledResource)))
+                                                    .withPoint(Point.fromLngLat(location1.getLongitude(), location1.getLatitude()));
+                                            pointAnnotationManager.create(pointAnnotationOptions);
+                                        }
+                                    });
+
                         }
                     });
                     pointAnnotationManager.addClickListener(pointAnnotation -> {
                         snapshot.getChildren().forEach(dataSnapshot -> {
                             ShareLocation location1 = dataSnapshot.getValue(ShareLocation.class);
-                            if (location1 != null && pointAnnotation.getPoint().longitude() == location1.longitude && pointAnnotation.getPoint().latitude() == location1.latitude){
-                                Toast.makeText(MainActivity.this, "Clicked" + location1.getId() + " Marker", Toast.LENGTH_SHORT).show();
+                            if (location1 != null && pointAnnotation.getPoint().longitude() == location1.getLongitude() && pointAnnotation.getPoint().latitude() == location1.getLatitude()){
+                                Toast.makeText(MainActivity.this, "Clicked " + location1.getId() + " Marker", Toast.LENGTH_SHORT).show();
                             }
                         });
                         return true;
