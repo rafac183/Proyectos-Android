@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "927842379102",
+    "project_id": "realtime-db-301fd",
+    "storage_bucket": "realtime-db-301fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927842379102:android:165e5c75faf8af0c9c9bcf",
+        "android_client_info": {
+          "package_name": "com.codingwithzo.realtimedbaddreadupdatedelete"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927842379102-1hr03i4g9frgud792jdp229lqe0isdoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBwc3jXypqOqgBsJMH3Jxg7EILvF8Xt5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927842379102-1hr03i4g9frgud792jdp229lqe0isdoa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

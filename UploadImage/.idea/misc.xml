@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/activity_create.xml" value="0.2375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/activity_create_pet.xml" value="0.234375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/activity_main.xml" value="0.234375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/fragment_create_pet.xml" value="0.234375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/view_item_pet.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/view_pet_single.xml" value="0.4" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/view_single_pet.xml" value="0.2375" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/drawable/ic_pet.xml" value="0.196" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/drawable/image_round.xml" value="0.196" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/activity_create_pet.xml" value="0.264" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/activity_login.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/activity_register.xml" value="0.2484375" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/activity_student.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/fragment_create_pet.xml" value="0.264" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/student_single.xml" value="0.264" />
+        <entry key="..\:/Users/Pluartz/AndroidStudioProjects/test/app/src/main/res/layout/view_pet_single.xml" value="0.22916666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
