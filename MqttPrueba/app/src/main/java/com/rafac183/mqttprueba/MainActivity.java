@@ -1,4 +1,4 @@
-package com.rafac183.mtqq;
+package com.rafac183.mqttprueba;
 
 import static android.graphics.Color.GREEN;
 import static android.graphics.Color.RED;
@@ -49,20 +49,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btnOn = findViewById(R.id.btnOn);
-        btnOn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                enviarMensaje(topic, topicMsgOn);
-            }
-        });
+        btnOn.setOnClickListener(view -> enviarMensaje(topic, topicMsgOn));
 
         Button btnOff = findViewById(R.id.btnOff);
-        btnOff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                enviarMensaje(topic, topicMsgOff);
-            }
-        });
+        btnOff.setOnClickListener(view -> enviarMensaje(topic, topicMsgOff));
 
         getNombreCliente();
         connectBroker();
